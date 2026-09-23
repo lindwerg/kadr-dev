@@ -18,15 +18,24 @@
 // туннель, сохраняя query и hash (в hash Telegram передаёт tgWebAppData).
 (async () => {
   const m = document.getElementById('m');
+  // API GitHub отдаёт свежий url.txt сразу; Pages — с задержкой деплоя (запасной путь).
+  const sources = [
+    () => fetch('https://api.github.com/repos/lindwerg/kadr-dev/contents/url.txt?ref=main&t=' + Date.now(),
+      { cache: 'no-store', headers: { Accept: 'application/vnd.github.raw' } }),
+    () => fetch('url.txt?t=' + Date.now(), { cache: 'no-store' }),
+  ];
   for (let i = 0; i < 3; i++) {
-    try {
-      const r = await fetch('url.txt?t=' + Date.now(), { cache: 'no-store' });
-      const u = (await r.text()).trim();
-      if (/^https:\/\/[a-z0-9.-]+$/i.test(u)) {
-        location.replace(u + '/' + location.search + location.hash);
-        return;
-      }
-    } catch (e) {}
+    for (const load of sources) {
+      try {
+        const r = await load();
+        if (!r.ok) continue;
+        const u = (await r.text()).trim();
+        if (/^https:\/\/[a-z0-9.-]+$/i.test(u)) {
+          location.replace(u + '/' + location.search + location.hash);
+          return;
+        }
+      } catch (e) {}
+    }
     await new Promise((res) => setTimeout(res, 1500));
   }
   m.textContent = 'Стенд разработки сейчас выключен. Попробуйте позже.';
