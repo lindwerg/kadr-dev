@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Пользовательское соглашение и политика конфиденциальности сервиса КАДР">
+<title>Документы — КАДР</title>
+<style>:root {
+  color-scheme: light dark;
+  --bg: #f6f3ec;
+  --surface: #ffffff;
+  --text: #17150f;
+  --muted: #5d5a52;
+  --line: #e2ddd1;
+  --accent: #c8f031;
+  --accent-line: #7f9a12;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #12110e;
+    --surface: #1d1b17;
+    --text: #f2efe7;
+    --muted: #b3aea2;
+    --line: #34312a;
+    --accent: #c8f031;
+    --accent-line: #c8f031;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  overflow-wrap: anywhere;
+}
+main { max-width: 720px; margin: 0 auto; padding: 32px 16px 48px; }
+.brand { margin: 0 0 8px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .18em; }
+h1 { margin: 0 0 20px; font-size: clamp(28px, 6vw, 38px); line-height: 1.1; letter-spacing: -.02em; }
+h2 { margin: 32px 0 8px; font-size: 20px; line-height: 1.25; }
+h3 { margin: 20px 0 6px; font-size: 16px; }
+p { margin: 0 0 12px; }
+ol, ul { margin: 0 0 12px; padding-left: 1.4em; }
+li { margin: 0 0 6px; }
+li > ul { margin: 6px 0 0; }
+a { color: var(--text); font-weight: 600; text-decoration-color: var(--accent-line); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+a:focus-visible { outline: 3px solid var(--accent-line); outline-offset: 2px; border-radius: 4px; }
+.docs { display: flex; flex-wrap: wrap; gap: 8px 16px; margin: 0 0 24px; padding: 0; list-style: none; font-size: 14px; }
+.docs [aria-current="page"] { text-decoration: none; color: var(--muted); }
+.contact { margin-top: 40px; padding: 16px; border: 1px solid var(--line); border-radius: 16px; background: var(--surface); font-size: 14px; }
+.contact p:last-child { margin-bottom: 0; }
+.cards { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
+.cards a { display: block; padding: 16px; border: 1px solid var(--line); border-radius: 16px; background: var(--surface); text-decoration: none; }
+.cards a:hover { border-color: var(--accent-line); }
+.cards span { display: block; margin-top: 4px; color: var(--muted); font-size: 14px; font-weight: 400; }</style>
+</head>
+<body>
+<main>
+<p class="brand">КАДР</p>
+<h1>Документы</h1>
+<ul class="cards"><li><a href="terms.html">Пользовательское соглашение<span>Редакция от 24.09.2026</span></a></li><li><a href="privacy.html">Политика конфиденциальности<span>Редакция от 24.09.2026</span></a></li></ul>
+<footer class="contact">
+<p>Администрация сервиса КАДР. Связь — бот <a href="https://t.me/AIVisualStudioBot" rel="noopener noreferrer">@AIVisualStudioBot</a> в Telegram: команда /support или раздел «Профиль → Поддержка» в Mini App.</p>
+</footer>
+</main>
+</body>
+</html>
